@@ -20,14 +20,9 @@ class Student  #DO NOT call on the scraper class here! Needs to be flexible on H
     end
   end
 
-  def add_student_attributes(attributes_hash) #iterate over the hashes#use metaprogramming to dynamically assign the student attributes and values
-  #use the send method...at the end, return: self
-  #exact same as the initialize!
-#   attributes_hash.each_pair {|k, v| self.send(("#{k}="), "#{v}") }
-  #self
+  def add_student_attributes(attributes_hash) #iterate over the hashes#use metaprogramming to dynamically assign the student attributes and values.. #use the send method. exact same as the initialize!
+   attributes_hash.each_pair {|k, v| self.send(("#{k}="), "#{v}") }
   end
-
-  #attributes_hash.each_pair { |key, value| self.send(("#{key}="), value) }
 
   def self.all
     @@all
