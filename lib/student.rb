@@ -25,7 +25,7 @@ class Student  #DO NOT call on the scraper class here! Needs to be flexible on H
   #use the send method...at the end, return: self
   #exact same as the initialize!
    attributes_hash.each_pair {|k, v| self.send(("#{k}="), "#{v}") }
-  self
+  #self
   end
 
   #attributes_hash.each_pair { |key, value| self.send(("#{key}="), value) }
