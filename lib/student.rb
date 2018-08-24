@@ -5,7 +5,6 @@ class Student  #DO NOT call on the scraper class here! Needs to be flexible on H
   @@all = []
 
   def initialize(student_hash) #argu of student hash (from any source - not just Scraper class). use the #send Method
-    binding.pry
     student_hash.each_pair {|k, v| self.send(("#{k}="), "#{v}") }
     #each_pair method is just like each/do but for hashes. look at Key and Value for self and call .send to pass in the value for Key and Value each time they are passed in.
     @@all << self
@@ -24,7 +23,7 @@ class Student  #DO NOT call on the scraper class here! Needs to be flexible on H
   def add_student_attributes(attributes_hash) #iterate over the hashes#use metaprogramming to dynamically assign the student attributes and values
   #use the send method...at the end, return: self
   #exact same as the initialize!
-   attributes_hash.each_pair {|k, v| self.send(("#{k}="), "#{v}") }
+#   attributes_hash.each_pair {|k, v| self.send(("#{k}="), "#{v}") }
   #self
   end
 
